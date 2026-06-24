@@ -29,7 +29,6 @@
 
 <div align="center">
   <!-- START_LATEST_REPOS -->
-  <a href="https://github.com/fulaura/AITU_BDA_PINN_Diploma"><img src="https://github-readme-stats.vercel.app/api/pin/?username=fulaura&repo=AITU_BDA_PINN_Diploma&theme=algolia&bg_color=0D1117" alt="AITU_BDA_PINN_Diploma" /></a>
-  <a href="https://github.com/fulaura/chromatic_attractor"><img src="https://github-readme-stats.vercel.app/api/pin/?username=fulaura&repo=chromatic_attractor&theme=algolia&bg_color=0D1117" alt="chromatic_attractor" /></a>
+
   <!-- END_LATEST_REPOS -->
 </div>
