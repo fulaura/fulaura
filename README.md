@@ -1,5 +1,5 @@
 
-### 📊 Dashboard
+### n contributions in the last year
 
 <div align="center">
   <picture>
