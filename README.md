@@ -34,9 +34,9 @@
 
 ---
 
-### 🚀 Featured Projects
+### 🚀 Recent Projects
 
-| Project | Description | Tech Stack | Links |
-|---------|-------------|------------|-------|
-| **[ML Project 1]** | Predictive model for [Use Case]. | Python, PyTorch | [Repo](#) |
-| **[Data Analysis 2]** | EDA and Dashboard for [Dataset]. | Python, Plotly | [Repo](#) |
+<div align="center">
+  <!-- START_LATEST_REPOS -->
+  <!-- END_LATEST_REPOS -->
+</div>
