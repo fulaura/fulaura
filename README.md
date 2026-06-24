@@ -76,8 +76,8 @@ I am a passionate **Data Scientist & Machine Learning Engineer** focused on extr
 ### 📈 GitHub Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=algolia&hide_border=true&bg_color=0D1117" alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_GITHUB_USERNAME&layout=compact&theme=algolia&hide_border=true&bg_color=0D1117" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api?username=fulaura&show_icons=true&theme=algolia&hide_border=true&bg_color=0D1117" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=fulaura&layout=compact&theme=algolia&hide_border=true&bg_color=0D1117" alt="Top Languages" />
 </div>
 
 ---
@@ -86,9 +86,9 @@ I am a passionate **Data Scientist & Machine Learning Engineer** focused on extr
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_GITHUB_USERNAME/output/dist/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_GITHUB_USERNAME/output/dist/github-contribution-grid-snake.svg">
-    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_GITHUB_USERNAME/output/dist/github-contribution-grid-snake.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/fulaura/fulaura/output/dist/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/fulaura/fulaura/output/dist/github-contribution-grid-snake.svg">
+    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/fulaura/fulaura/output/dist/github-contribution-grid-snake.svg">
   </picture>
 </div>
 
@@ -96,5 +96,5 @@ I am a passionate **Data Scientist & Machine Learning Engineer** focused on extr
 
 <div align="center">
   <!-- Profile View Counter -->
-  <img src="https://komarev.com/ghpvc/?username=YOUR_GITHUB_USERNAME&color=2E8B57&style=flat-square&label=PROFILE+VIEWS" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=fulaura&color=2E8B57&style=flat-square&label=PROFILE+VIEWS" alt="Profile Views" />
 </div>
