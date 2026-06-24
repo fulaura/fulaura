@@ -1,12 +1,3 @@
-# Hi, I'm [Your Name] 👋
-
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=24&pause=1000&color=2E8B57&center=true&vCenter=true&width=500&lines=Data+Scientist;Machine+Learning+Engineer;Extracting+Insights+from+Data;Building+Predictive+Models" alt="Typing SVG" />
-</div>
-
-
-
----
 
 ### 📊 Dashboard
 
