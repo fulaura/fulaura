@@ -2,25 +2,32 @@ import urllib.request
 import json
 import re
 import os
+from collections import defaultdict
 
 USERNAME = "fulaura"
 README_PATH = "README.md"
 MARKER_START = "<!-- START_LATEST_REPOS -->"
 MARKER_END = "<!-- END_LATEST_REPOS -->"
 
-def fetch_latest_repos():
-    url = f"https://api.github.com/users/{USERNAME}/repos?sort=pushed&per_page=50"
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+def fetch_repos():
+    url = f"https://api.github.com/users/{USERNAME}/repos?per_page=100"
+    # The Accept header is needed to ensure topics are returned in the response
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0', 'Accept': 'application/vnd.github.mercy-preview+json'})
     with urllib.request.urlopen(req) as response:
         repos = json.loads(response.read().decode())
     
     # Filter out forks and the profile repo
-    valid_repos = [r for r in repos if not r['fork'] and r['name'] != USERNAME]
-    
-    # Get top 2
-    return valid_repos[:2]
+    return [r for r in repos if not r.get('fork') and r.get('name') != USERNAME]
 
-def update_readme(repos):
+def group_repos_by_tag(repos):
+    grouped = defaultdict(list)
+    for repo in repos:
+        topics = repo.get('topics', [])
+        for topic in topics:
+            grouped[topic].append(repo)
+    return grouped
+
+def update_readme(grouped_repos):
     if not os.path.exists(README_PATH):
         print(f"{README_PATH} not found.")
         return
@@ -28,14 +35,25 @@ def update_readme(repos):
     with open(README_PATH, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    cards = []
-    for repo in repos:
-        name = repo['name']
-        card_url = f"https://github-readme-stats.vercel.app/api/pin/?username={USERNAME}&repo={name}&theme=algolia&bg_color=0D1117"
-        repo_url = repo['html_url']
-        cards.append(f'  <a href="{repo_url}"><img src="{card_url}" alt="{name}" /></a>')
+    markdown_lines = []
     
-    replacement = f"{MARKER_START}\n" + "\n".join(cards) + f"\n  {MARKER_END}"
+    # Sort topics alphabetically
+    for topic in sorted(grouped_repos.keys()):
+        # Format the topic name nicely (e.g. "machine-learning" -> "Machine Learning")
+        display_topic = topic.replace('-', ' ').title()
+        markdown_lines.append(f"#### 🏷️ {display_topic}")
+        markdown_lines.append('<div align="center">')
+        
+        for repo in grouped_repos[topic]:
+            name = repo['name']
+            card_url = f"https://github-readme-stats.vercel.app/api/pin/?username={USERNAME}&repo={name}&theme=algolia&bg_color=0D1117"
+            repo_url = repo['html_url']
+            markdown_lines.append(f'  <a href="{repo_url}"><img src="{card_url}" alt="{name}" /></a>')
+        
+        markdown_lines.append('</div>')
+        markdown_lines.append('<br>')
+
+    replacement = f"{MARKER_START}\n" + "\n".join(markdown_lines) + f"\n  {MARKER_END}"
     
     # Regex to replace content between markers
     pattern = re.compile(rf"{MARKER_START}.*?{MARKER_END}", re.DOTALL)
@@ -47,5 +65,11 @@ def update_readme(repos):
     print("README updated successfully.")
 
 if __name__ == "__main__":
-    latest_repos = fetch_latest_repos()
-    update_readme(latest_repos)
+    repos = fetch_repos()
+    grouped = group_repos_by_tag(repos)
+    if grouped:
+        update_readme(grouped)
+    else:
+        # If no tags are found at all, we should probably clear the section or just leave it empty.
+        update_readme({})
+        print("No tagged repositories found. Section cleared.")
