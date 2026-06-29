@@ -1,5 +1,5 @@
 
-### 📊 <!-- START_CONTRIBUTIONS -->179<!-- END_CONTRIBUTIONS --> contributions in the last year
+### 📊 <!-- START_CONTRIBUTIONS -->178<!-- END_CONTRIBUTIONS --> contributions in the last year
 
 <div align="center">
   <picture>
